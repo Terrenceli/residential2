@@ -124,9 +124,9 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="..\core;..\third_party\cppunit-1.12.0\include"
+				AdditionalIncludeDirectories="&quot;C:\poco-1.4.6p1\Util\include&quot;;&quot;C:\poco-1.4.6p1\Net\include&quot;;&quot;C:\poco-1.4.6p1\Foundation\include&quot;;..\core;&quot;..\third_party\cppunit-1.12.0\include&quot;"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;_NO_CPPUNIT"
-				RuntimeLibrary="0"
+				RuntimeLibrary="2"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
 				Detect64BitPortabilityProblems="true"

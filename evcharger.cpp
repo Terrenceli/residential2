@@ -558,8 +558,23 @@ double evcharger::update_state(double dt /* seconds */)
 TIMESTAMP evcharger::sync(TIMESTAMP t0, TIMESTAMP t1) 
 {
 
-	//std::cout<<this->charger_type<<endl;
-	this->charger_type=CT_LOW;
+	std::cout<<"33333"<<
+
+	HTTPClientSession s("http://localhost:8080/MCTS/decisionMaker/test"); 
+	HTTPRequest request(HTTPRequest::HTTP_GET, "/MCTS/decisionMaker/test"); 
+	HTMLForm form; 
+	form.add("EV1", "1"); 
+	form.add("EV2", "2");
+	form.prepareSubmit(request); 
+	s.sendRequest(request); 
+
+	HTTPResponse response; 
+	std::istream& rs = s.receiveResponse(response); 
+	StreamCopier::copyStream(rs, std::cout);
+
+
+
+
 	OBJECT *obj = OBJECTHDR(this);
 	// compute the total load and heat gain
 	if (t0>TS_ZERO && t1>t0)
